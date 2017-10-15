@@ -2,8 +2,6 @@
 
 Chrome extension that shows page plain text
 
-![screenshot-mini.png](doc/screenshot-mini.png) 
-
 ## Screenshot
 
 ![screenshot.png](doc/screenshot.png) 
