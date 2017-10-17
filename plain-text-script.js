@@ -8,10 +8,11 @@ if (!body.innerText.startsWith(titleLb)) {
 } else {
     body.innerText = body.innerText;
 }
-style.padding = '10px';
-style.margin = '0';
-style.backgroundColor = 'white';
-style.color = 'black';
-style.fontFamily = 'Courier New';
-style.fontSize = '13px';
-style.textAlign = 'left';
+
+style.setProperty('padding', '10px', 'important');
+style.setProperty('margin', '0', 'important');
+style.setProperty('background', 'white', 'important');
+style.setProperty('color', 'black', 'important');
+style.setProperty('font-family', 'Courier New', 'important');
+style.setProperty('font-size', '13px', 'important');
+style.setProperty('text-align', 'left', 'important');
