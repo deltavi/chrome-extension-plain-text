@@ -9,10 +9,52 @@ if (document.querySelectorAll('#' + extensionId).length == 0) {
     header.id = extensionId;
     header.style.setProperty('float', 'right', 'important');
 
+    var zoomValue = 1;
+
+    // ZOOM IN
+    var zoomInLink = document.createElement('a');
+    zoomInLink.innerHTML = '&#x2795;'
+    zoomInLink.href = '#';
+    zoomInLink.title = 'Zoom In';
+    zoomInLink.style.setProperty('color', '#0366d6');
+    zoomInLink.style.setProperty('text-decoration', 'unset');
+    zoomInLink.style.setProperty('background', '#dddddd');
+    zoomInLink.style.setProperty('border', '1px solid #aaaaaa');
+    zoomInLink.style.setProperty('border-radius', '4px');
+    zoomInLink.style.setProperty('padding', '3px 5px');
+    zoomInLink.style.setProperty('font-weight', 'bold');
+    zoomInLink.style.setProperty('user-select', 'none');
+    zoomInLink.onclick = function () {
+        zoomValue *= 1.1
+        body.style.setProperty('zoom', zoomValue);
+    }
+    header.appendChild(zoomInLink);
+
+    // ZOOM OUT
+    var zoomOutLink = document.createElement('a');
+    zoomOutLink.innerHTML = '&#x2796;'
+    zoomOutLink.href = '#';
+    zoomOutLink.title = 'Zoom Out';
+    zoomOutLink.style.setProperty('margin-left', '5px');
+    zoomOutLink.style.setProperty('color', '#0366d6');
+    zoomOutLink.style.setProperty('text-decoration', 'unset');
+    zoomOutLink.style.setProperty('background', '#dddddd');
+    zoomOutLink.style.setProperty('border', '1px solid #aaaaaa');
+    zoomOutLink.style.setProperty('border-radius', '4px');
+    zoomOutLink.style.setProperty('padding', '3px 5px');
+    zoomOutLink.style.setProperty('font-weight', 'bold');
+    zoomOutLink.style.setProperty('user-select', 'none');
+    zoomOutLink.onclick = function () {
+        zoomValue *= 0.9
+        body.style.setProperty('zoom', zoomValue);
+    }
+    header.appendChild(zoomOutLink);
+
     // EDIT
     var editLink = document.createElement('a');
     editLink.innerText = 'Edit';
     editLink.href = '#';
+    editLink.style.setProperty('margin-left', '5px');
     editLink.style.setProperty('color', '#0366d6');
     editLink.style.setProperty('text-decoration', 'unset');
     editLink.style.setProperty('background', '#dddddd');
@@ -20,6 +62,7 @@ if (document.querySelectorAll('#' + extensionId).length == 0) {
     editLink.style.setProperty('border-radius', '4px');
     editLink.style.setProperty('padding', '3px 5px');
     editLink.style.setProperty('font-weight', 'bold');
+    editLink.style.setProperty('user-select', 'none');
     editLink.onclick = function () {
         if (body.contentEditable.toLowerCase() == 'true') {
             body.contentEditable = 'false';
@@ -48,6 +91,7 @@ if (document.querySelectorAll('#' + extensionId).length == 0) {
     downloadLink.style.setProperty('border-radius', '4px');
     downloadLink.style.setProperty('padding', '3px 5px');
     downloadLink.style.setProperty('font-weight', 'bold');
+    downloadLink.style.setProperty('user-select', 'none');
     downloadLink.onclick = function () {
         downloadText('page-content.txt', body.innerText);
     }
@@ -56,11 +100,13 @@ if (document.querySelectorAll('#' + extensionId).length == 0) {
     // TITLE & TEXT
     var innerText = document.body.innerText;
 
+    var urlLb = 'URL: ';
     var titleLb = 'Title: ';
-    if (!body.innerText.startsWith(titleLb)) {
+    if (!body.innerText.startsWith(urlLb)) {
         var title = titleLb + document.title;
-        title += '\n' + Array(title.length + 1).join('-');
-        body.innerText = title + '\n\n' + innerText;
+        var pageUrl = urlLb + window.location.href;
+        var info = pageUrl + '\n' + title + '\n' + Array(Math.max(title.length, pageUrl.length) + 1).join('-');
+        body.innerText = info + '\n\n' + innerText;
     } else {
         body.innerText = innerText;
     }
@@ -82,8 +128,8 @@ if (document.querySelectorAll('#' + extensionId).length == 0) {
     style.setProperty('margin', '0', 'important');
     style.setProperty('background', 'white', 'important');
     style.setProperty('color', 'black', 'important');
-    style.setProperty('font-family', 'Courier New', 'important');
-    style.setProperty('font-size', '13px', 'important');
+    style.setProperty('font-family', '"Lucida Console", monospace', 'important');
+    style.setProperty('font-size', '18px', 'important');
     style.setProperty('text-align', 'left', 'important');
     style.setProperty('line-height', '1.5', 'important');
 
