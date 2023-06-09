@@ -1,6 +1,6 @@
-chrome.browserAction.onClicked.addListener(function (tab) {
-  chrome.tabs.executeScript({
-    file: 'plain-text-script.js', 
-    allFrames: true
+chrome.action.onClicked.addListener((tab) => {
+  chrome.scripting.executeScript({
+    target: {tabId: tab.id},
+    files: ['plain-text-script.js']
   });
 });

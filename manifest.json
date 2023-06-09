@@ -1,10 +1,8 @@
 {
   "name": "Page Plain Text",
   "description": "Chrome extension that shows page plain text",
-  "version": "0.4",
-  "permissions": [
-    "activeTab"
-  ],
+  "version": "0.5",
+  "permissions": ["activeTab", "scripting"],
   "icons": {
     "16": "ico/btn_circle_text.16x16.png",
     "20": "ico/btn_circle_text.20x20.png",
@@ -15,12 +13,10 @@
     "128": "ico/btn_circle_text.128x128.png"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": false
+    "service_worker": "background.js"
   },
-  "browser_action": {
+  
+  "action": {
     "default_title": "Show page plain text",
     "default_icon": {
       "16": "ico/btn_circle_text.16x16.png",
@@ -32,7 +28,7 @@
       "128": "ico/btn_circle_text.128x128.png"
     }
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
 
 
