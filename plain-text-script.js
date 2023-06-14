@@ -97,7 +97,7 @@ if (document.querySelectorAll('#' + extensionId).length == 0) {
     }
     header.appendChild(downloadLink);
 
-    // TITLE & TEXT
+    // URL, TITLE & TEXT
     var innerText = document.body.innerText;
 
     var urlLb = 'URL: ';
@@ -129,7 +129,7 @@ if (document.querySelectorAll('#' + extensionId).length == 0) {
     style.setProperty('background', 'white', 'important');
     style.setProperty('color', 'black', 'important');
     style.setProperty('font-family', '"Lucida Console", monospace', 'important');
-    style.setProperty('font-size', '18px', 'important');
+    style.setProperty('font-size', '16px', 'important');
     style.setProperty('text-align', 'left', 'important');
     style.setProperty('line-height', '1.5', 'important');
 
