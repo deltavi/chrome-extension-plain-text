@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Plain Text</title>
+    <style>
+        :focus{ background-color: unset; outline: unset;}
+        body {
+            padding: 10px;
+            margin: 0;
+            background: white;
+            color: black;
+            font-family: "Lucida Console", monospace;
+            font-size: 15px;
+            text-align: left;
+            line-height: 1.2;
+            overflow-wrap: break-word
+        }
+
+        #chrome-extension-plain-text-header {
+            float: right !important;
+        }
+
+        #chrome-extension-plain-text-header a {
+            margin-left: 1px; 
+            margin-right: 0; 
+            color: rgb(3, 102, 214); 
+            text-decoration: unset; 
+            background: rgb(221, 221, 221); 
+            border: 1px solid rgb(170, 170, 170); 
+            border-radius: 4px; padding: 3px 5px; 
+            font-weight: bold; 
+            user-select: none;
+        }
+
+        #chrome-extension-plain-text-header a:active, #chrome-extension-plain-text-header a.pressed{
+            color: #ffffff;
+            background: #0366d6;
+            border: 1px solid #0000ac;
+        }
+    </style>
+</head>
+<body>
+    <div id="chrome-extension-plain-text-header">
+        <a id="zoom-in" href="#" title="Zoom In" >➕</a>
+        <a id="zoom-out" href="#" title="Zoom Out" >➖</a>
+        <a id="copy" href="#">Copy</a>
+        <a id="edit" href="#">Edit</a>
+        <a id="download" href="#" >Download</a>
+    </div>
+    <div id="chrome-extension-plain-text-body"></div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

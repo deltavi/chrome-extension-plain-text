@@ -10,7 +10,7 @@ Chrome extension that shows page plain text
 - Removes all advertising to focus only on the content of the text
 - Copy text to use it in other documents
 - Zoom In and Zoom Out text to improve legibility (CTRL + ➕ / CTRL + ➖)
-- Contextual menu to quickly download the plain text of the current page
+- Contextual menu to quickly **copy** or **download** the plain text of the current page
 
 ## Screenshots
 
