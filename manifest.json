@@ -1,7 +1,7 @@
 {
   "name": "Page Plain Text",
   "description": "Chrome extension that shows page plain text",
-  "version": "0.7",
+  "version": "0.8",
   "permissions": [
     "tabs",
     "activeTab", 

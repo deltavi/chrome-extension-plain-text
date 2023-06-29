@@ -35,6 +35,7 @@ let url = params.get("u");
 let txt = params.get("tx");
 let allText = composeText(title, url, txt);
 let body = document.getElementById('chrome-extension-plain-text-body');
+let infoBox = document.getElementById('info-box');
 body.innerText = allText;
 let zoomValue = 1;
 
@@ -53,9 +54,11 @@ addOnClick('edit', function (e) {
   if (body.contentEditable.toLowerCase() == 'true') {
     body.contentEditable = 'false';
     editLink.classList.remove("pressed")
+    infoBox.style = 'display: none;'
   } else {
     body.contentEditable = 'true';
     editLink.classList.add("pressed")
+    infoBox.style = 'display: initial;'
   }
 });
 

@@ -9,19 +9,29 @@
     <style>
         :focus{ background-color: unset; outline: unset;}
         body {
-            padding: 10px;
+            padding: 0;
             margin: 0;
             background: white;
             color: black;
             font-family: "Lucida Console", monospace;
-            font-size: 15px;
+            font-size: 14px;
             text-align: left;
             line-height: 1.2;
             overflow-wrap: break-word
         }
 
         #chrome-extension-plain-text-header {
-            float: right !important;
+            text-align: right;
+            padding: 8px 10px 10px 10px;
+            background-color: whitesmoke;
+            border-bottom: 1px solid rgb(170, 170, 170); 
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        #chrome-extension-plain-text-body {
+            padding: 60px 10px 10px 10px;
         }
 
         #chrome-extension-plain-text-header a {
@@ -31,27 +41,81 @@
             text-decoration: unset; 
             background: rgb(221, 221, 221); 
             border: 1px solid rgb(170, 170, 170); 
-            border-radius: 4px; padding: 3px 5px; 
+            border-radius: 4px; 
+            padding: 3px 5px; 
             font-weight: bold; 
             user-select: none;
+            display: inline-flex;
+            margin-top: 2px;
         }
 
         #chrome-extension-plain-text-header a:active, #chrome-extension-plain-text-header a.pressed{
             color: #ffffff;
             background: #0366d6;
             border: 1px solid #0000ac;
+        }  
+        #info-box {
+            background-color: rgb(201, 255, 201);
+            padding: 4px;
+            border-radius: 4px;
+            color: black;
+            text-transform: lowercase;
+            border: 1px solid #5cb47a; 
+            margin-right: 15px;
+        }   
+        #logo {
+            float: left;
+            height: 20px;
+            display: inline-flex;
+            line-height: 21px;
+            gap: 7px;
+            user-select: none;
+            margin-top: 4px;
+        }   
+
+        @media (max-width:700px){
+            #chrome-extension-plain-text-body {
+                padding-top: 100px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: dark;
+            }
+
+            body {
+                background: black;
+                color: white;
+            }
+
+            #chrome-extension-plain-text-header {
+                background-color: rgb(85, 85, 85);
+            }
+
+            #chrome-extension-plain-text-header a {
+                color: rgb(255, 255, 255); 
+                background: rgb(129, 129, 129); 
+            }
+
+            #info-box {
+                background-color: #5cb47a;
+                color: black;
+            }
         }
     </style>
 </head>
 <body>
     <div id="chrome-extension-plain-text-header">
+        <div id="logo"><img src="ico/btn_circle_text.20x20.png"> Page Plain Text</div>
+        <span id="info-box">Edit-Mode On</span>
         <a id="zoom-in" href="#" title="Zoom In" >➕</a>
         <a id="zoom-out" href="#" title="Zoom Out" >➖</a>
         <a id="copy" href="#">Copy</a>
-        <a id="edit" href="#">Edit</a>
+        <a id="edit" class="pressed" href="#">Edit<span class="edit-status"></span></a>
         <a id="download" href="#" >Download</a>
     </div>
-    <div id="chrome-extension-plain-text-body"></div>
+    <div id="chrome-extension-plain-text-body" contenteditable="true"></div>
     <script type="module" src="main.js"></script>
 </body>
 </html>
