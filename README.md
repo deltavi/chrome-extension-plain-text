@@ -4,6 +4,7 @@ Chrome extension that shows page plain text
 ## Features
 
 - Shows page plain text
+- Extracts text from the selection on the page
 - Text editing
 - Download page plain text
 - Removes all formatting from text

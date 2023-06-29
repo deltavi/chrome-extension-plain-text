@@ -6,7 +6,7 @@ function extractText() {
   return { 
     title: title,  
     url: url,
-    text: document.body.innerText
+    text: window.getSelection().toString().trim() || document.body.innerText
   }
 };
 
@@ -14,7 +14,7 @@ function copyText() {
   function composeText(title, url, body) {
     return title + '\n' + url + "\n\n" + body;
   }
-  let allText = composeText(document.title, window.location.href, document.body.innerText);
+  let allText = composeText(document.title, window.location.href, window.getSelection().toString().trim() || document.body.innerText);
   navigator.clipboard.writeText(allText);
   return allText;
 };
