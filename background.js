@@ -64,9 +64,11 @@ chrome.runtime.onInstalled.addListener(function (a,b,c) {
   chrome.contextMenus.create({
     title: 'Copy',
     id: 'copy-text',
+    contexts: ['all'],
   });
   chrome.contextMenus.create({
     title: 'Download',
     id: 'download-text',
+    contexts: ['all'],
   });
 });
