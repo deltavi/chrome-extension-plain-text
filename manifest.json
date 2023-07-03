@@ -3,7 +3,6 @@
   "description": "Chrome extension that shows page plain text",
   "version": "0.9",
   "permissions": [
-    "tabs",
     "activeTab", 
     "scripting", 
     "contextMenus",
