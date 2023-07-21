@@ -14,11 +14,14 @@ Chrome extension that shows page plain text
 - Contextual menu to quickly **copy** or **download** the plain text of the current page
 - Dark Mode color scheme
 
-## ☕BUY ME A COFFEE
+# Links
+- My Home page: https://www.vincenzodevivo.com/
+- My GitHub: https://github.com/deltavi
 
+
+# ☕BUY ME A COFFEE
 Want to buy me a coffee? By all means! Visit 
-https://www.buymeacoffee.com/vincenzodevivo
-
+https://www.buymeacoffee.com/vincenzodevivo or https://www.paypal.com/paypalme/VincenzoDeVivoAutore
 ## Screenshots
 
 ![screenshot.png](doc/screenshot.png) 
