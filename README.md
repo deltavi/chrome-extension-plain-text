@@ -1,6 +1,9 @@
-# ![btn_circle_text.48x48.png](ico/btn_circle_text.48x48.png) Chrome Extension - Page Plain Text 
+# ![icon](ico/btn_circle_text.24x24.png) Chrome Extension - Page Plain Text 
 
 Chrome extension that shows page plain text and allows you to edit or download the text
+
+![mini banner](doc/screenshot-mini.png)
+
 ## Features
 
 - Shows page plain text (keyboard shortcut: **Ctrl + Shift + 1**)
