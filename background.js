@@ -19,6 +19,35 @@ function copyText() {
   return allText;
 };
 
+function executeCommand(command, tab){
+  if(tab.url.indexOf("chrome://") === -1){
+    if(command === 'download-text'){
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: extractText,
+      }).then(async (r) => {
+        const res = r[0].result
+        const allText = composeText(res.title , res.url, res.text)
+        chrome.downloads.download({
+          url: 'data:text/plain;charset=utf-8,' + encodeURIComponent(allText),
+          filename: formatFileName(res.title),
+          saveAs: true
+        });
+      });
+    } else if(command === 'copy-text'){
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: copyText,
+      }).then(async (r) => {
+        /*
+        const allText = r[0].result
+        console.log("allText", allText);
+        */
+      });
+    }
+  }
+};
+
 
 chrome.action.onClicked.addListener( (tab) => {
   chrome.scripting.executeScript({
@@ -32,32 +61,12 @@ chrome.action.onClicked.addListener( (tab) => {
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if(tab.url.indexOf("chrome://") === -1){
-    if(info.menuItemId === 'download-text'){
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        func: extractText,
-      }).then(async (r) => {
-        const res = r[0].result
-        const allText = composeText(res.title , res.url, res.text)
-        chrome.downloads.download({
-          url: 'data:text/plain;charset=utf-8,' + encodeURIComponent(allText),
-          filename: formatFileName(res.title),
-          saveAs: true
-        });
-      });
-    } else if(info.menuItemId === 'copy-text'){
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        func: copyText,
-      }).then(async (r) => {
-        /*
-        const allText = r[0].result
-        console.log("allText", allText);
-        */
-      });
-    }
-  }
+  executeCommand(info.menuItemId, tab)
+});
+
+chrome.commands.onCommand.addListener((command, tab) => {
+  console.log(`Command: ${command}, Tab: ${tab.url}`);
+  executeCommand(command, tab)
 });
 
 chrome.runtime.onInstalled.addListener(function (a,b,c) {

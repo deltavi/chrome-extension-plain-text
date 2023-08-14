@@ -1,7 +1,7 @@
 {
   "name": "Page Plain Text",
-  "description": "Chrome extension that shows page plain text",
-  "version": "0.9",
+  "description": "Chrome extension that shows page plain text and allows you to edit or download the text",
+  "version": "1.0",
   "permissions": [
     "activeTab", 
     "scripting", 
@@ -33,6 +33,28 @@
       "48": "ico/btn_circle_text.48x48.png",
       "64": "ico/btn_circle_text.64x64.png",
       "128": "ico/btn_circle_text.128x128.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1",
+        "mac": "Command+Shift+1"
+      }
+    },
+    "download-text": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2",
+        "mac": "Command+Shift+2"
+      },
+      "description": "Download page plain text"
+    },
+    "copy-text": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+3",
+        "mac": "Command+Shift+3"
+      },
+      "description": "Copy page plain text"
     }
   },
   "manifest_version": 3
