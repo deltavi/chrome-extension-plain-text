@@ -49,6 +49,15 @@
             margin-top: 2px;
         }
 
+        a#donate {
+            background-color: #f6d312;
+            color: black;
+            border-radius: 15px;
+            border: 2px solid orange;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
         #chrome-extension-plain-text-header a:active, #chrome-extension-plain-text-header a.pressed{
             color: #ffffff;
             background: #0366d6;
@@ -85,7 +94,7 @@
             }
 
             body {
-                background: black;
+                background-color: rgb(25, 25, 25);
                 color: white;
             }
 
@@ -96,6 +105,12 @@
             #chrome-extension-plain-text-header a {
                 color: rgb(255, 255, 255); 
                 background: rgb(129, 129, 129); 
+            }
+
+            a#donate {
+                background-color: #f6d312;
+                color: black;
+                border: 2px solid orange;
             }
 
             #info-box {
@@ -114,6 +129,7 @@
         <a id="copy" href="#">Copy</a>
         <a id="edit" class="pressed" href="#">Edit<span class="edit-status"></span></a>
         <a id="download" href="#" >Download</a>
+        <a id="donate" href="https://www.paypal.com/paypalme/VincenzoDeVivoAutore" target="_blank">Donate</a>
     </div>
     <div id="chrome-extension-plain-text-body" contenteditable="true"></div>
     <script type="module" src="main.js"></script>

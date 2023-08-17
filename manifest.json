@@ -1,7 +1,7 @@
 {
   "name": "Page Plain Text",
   "description": "Chrome extension that shows page plain text and allows you to edit or download the text",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": [
     "activeTab", 
     "scripting", 
